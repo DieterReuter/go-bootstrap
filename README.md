@@ -5,14 +5,16 @@
 ## Background
 According to this comment https://github.com/docker/docker/issues/27384#issuecomment-255408388
 ```
-If you mean binary packages, then, no. We only package releases. But it's pretty easy to build your own. On any machine that has a Go install (doesn't have to be arm64), run:
+If you mean binary packages, then, no. We only package releases. But it's pretty easy to build your
+own. On any machine that has a Go install (doesn't have to be arm64), run:
   git clone https://go.googlesource.com/go
   cd go/src
   export GOROOT_BOOTSTRAP=$(go env GOROOT)
   GOOS=linux GOARCH=arm64 ./bootstrap.bash
-This will create a ../../go-linux-arm64-bootstrap.tbz that you can just unpack on the target machine and use. You may have to set GOROOT on the target to where you unpacked the tarball.
+This will create a ../../go-linux-arm64-bootstrap.tbz that you can just unpack on the target machine
+and use. You may have to set GOROOT on the target to where you unpacked the tarball.
 ```
-it should be really easy to create such bootstrap packages in advance for ARM64.
+so, it should be really easy to create such bootstrap packages in advance for ARM64.
 
 
 ## How I build it
